@@ -7,18 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/* نفس الـ CSS السابق - لم يتغير */
-:root{
-  --primary:#1a5c38;--primary-light:#2d8653;--primary-dark:#0f3d26;
-  --gold:#c9a84c;--gold-light:#e8c97a;--bg:#f0f4f0;--card:#ffffff;
-  --border:#d0e0d4;--text:#1a2e1f;--text-muted:#6b8c74;
-  --danger:#c0392b;--success:#27ae60;--warning:#f39c12;
-  --owner:#6a0dad;--owner-light:#9b59b6;
-  --shadow:0 4px 20px rgba(26,92,56,.12);--radius:14px;
-}
+:root{--primary:#1a5c38;--primary-light:#2d8653;--primary-dark:#0f3d26;--gold:#c9a84c;--gold-light:#e8c97a;--bg:#f0f4f0;--card:#ffffff;--border:#d0e0d4;--text:#1a2e1f;--text-muted:#6b8c74;--danger:#c0392b;--success:#27ae60;--warning:#f39c12;--owner:#6a0dad;--owner-light:#9b59b6;--shadow:0 4px 20px rgba(26,92,56,.12);--radius:14px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-
 .auth-page{min-height:100vh;background:linear-gradient(135deg,var(--primary-dark),var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;padding:20px;}
 .auth-box{background:white;border-radius:20px;padding:40px;width:100%;max-width:460px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
 .auth-logo{text-align:center;margin-bottom:28px;}
@@ -30,153 +21,93 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
 .auth-tab.active{background:var(--primary);color:white;}
 .form-group{margin-bottom:18px;}
 .form-group label{display:block;font-size:13px;font-weight:700;color:var(--primary-dark);margin-bottom:6px;}
-.form-group input{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:10px;font-family:'Cairo',sans-serif;font-size:14px;color:var(--text);transition:border .2s;}
+.form-group input{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:10px;font-family:'Cairo',sans-serif;font-size:14px;transition:border .2s;}
 .form-group input:focus{outline:none;border-color:var(--primary);}
 .remember-row{display:flex;align-items:center;gap:8px;margin-bottom:20px;}
-.remember-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--primary);cursor:pointer;}
-.remember-row label{font-size:13px;color:var(--text-muted);cursor:pointer;}
-.btn-primary{width:100%;padding:13px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;border:none;border-radius:10px;font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 15px rgba(26,92,56,.3);}
-.btn-primary:hover{transform:translateY(-2px);}
-.btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-.auth-error{background:#fdecea;border:1px solid #f5c6cb;color:var(--danger);padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px;display:none;}
-.auth-info{background:#e8f5e9;border:1px solid #c8e6c9;color:#1b5e20;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px;display:none;}
-
+.btn-primary{width:100%;padding:13px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;border:none;border-radius:10px;font-weight:700;cursor:pointer;}
+.btn-primary:disabled{opacity:.6;}
+.auth-error{background:#fdecea;border:1px solid #f5c6cb;color:var(--danger);padding:10px;border-radius:8px;font-size:13px;margin-bottom:16px;display:none;}
 .owner-bar{background:linear-gradient(135deg,var(--owner),var(--owner-light));padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .owner-bar-title{color:white;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;}
-.owner-accounts{display:flex;flex-wrap:wrap;gap:8px;}
-.owner-btn{background:rgba(255,255,255,.2);color:white;border:1px solid rgba(255,255,255,.35);padding:6px 12px;border-radius:20px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:12px;font-weight:600;transition:all .2s;}
-.owner-btn:hover{background:rgba(255,255,255,.35);}
-.owner-btn.active{background:white;color:var(--owner);border-color:white;}
-.owner-back-btn{background:rgba(255,255,255,.15);color:white;border:1px solid rgba(255,255,255,.3);padding:7px 14px;border-radius:8px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;}
-.owner-back-btn:hover{background:rgba(255,255,255,.28);}
-.owner-viewing-badge{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;color:white;}
-
+.owner-btn{background:rgba(255,255,255,.2);color:white;border:1px solid rgba(255,255,255,.35);padding:6px 12px;border-radius:20px;cursor:pointer;font-size:12px;font-weight:600;}
+.owner-btn.active{background:white;color:var(--owner);}
+.owner-back-btn{background:rgba(255,255,255,.15);color:white;border:1px solid rgba(255,255,255,.3);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;}
 .app{display:none;min-height:100vh;}
-.topbar{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 3px 15px rgba(0,0,0,.2);position:sticky;top:0;z-index:100;}
+.topbar{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 .topbar-brand{display:flex;align-items:center;gap:12px;}
-.topbar-logo{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0;}
-.topbar-title h2{font-size:14px;font-weight:900;line-height:1.4;}
-.topbar-title p{font-size:11px;opacity:.8;}
+.topbar-logo{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+.topbar-title h2{font-size:14px;font-weight:900;}
 .topbar-user{display:flex;align-items:center;gap:12px;}
-.user-badge{background:rgba(255,255,255,.15);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;text-align:center;line-height:1.5;}
-.btn-logout{background:rgba(255,255,255,.15);color:white;border:1px solid rgba(255,255,255,.3);padding:7px 14px;border-radius:8px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;}
-.btn-logout:hover{background:rgba(255,255,255,.25);}
+.user-badge{background:rgba(255,255,255,.15);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;}
+.btn-logout{background:rgba(255,255,255,.15);color:white;border:1px solid rgba(255,255,255,.3);padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:600;}
 .main-content{padding:24px;max-width:1200px;margin:0 auto;}
 .page{display:none;}.page.active{display:block;}
 .section-title{font-size:20px;font-weight:900;color:var(--primary-dark);margin-bottom:20px;display:flex;align-items:center;gap:10px;border-bottom:3px solid var(--gold);padding-bottom:10px;}
-.section-title i{color:var(--gold);}
 .card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid var(--border);}
 .card-title{font-size:16px;font-weight:800;color:var(--primary-dark);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
-.card-title i{color:var(--primary);}
 .date-selector{background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:var(--radius);padding:20px 24px;color:white;margin-bottom:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
-.date-selector label{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;}
-.date-selector input[type=date]{padding:9px 14px;border:2px solid rgba(255,255,255,.4);border-radius:8px;font-family:'Cairo',sans-serif;font-size:14px;background:rgba(255,255,255,.15);color:white;cursor:pointer;}
-.date-selector input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1);cursor:pointer;}
+.date-selector input[type=date]{padding:9px 14px;border:2px solid rgba(255,255,255,.4);border-radius:8px;background:rgba(255,255,255,.15);color:white;cursor:pointer;}
 .form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-bottom:20px;}
 .field-group{display:flex;flex-direction:column;}
-.field-group label{font-size:12px;font-weight:700;color:var(--primary-dark);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
-.field-group label i{color:var(--primary);}
-.field-group input,.field-group textarea{padding:11px 13px;border:2px solid var(--border);border-radius:9px;font-family:'Cairo',sans-serif;font-size:14px;color:var(--text);transition:border .2s;}
-.field-group input:focus,.field-group textarea:focus{outline:none;border-color:var(--primary);}
-.field-group textarea{resize:vertical;min-height:80px;}
-.field-group input:disabled{background:#f5f5f5;color:#999;cursor:not-allowed;}
-.field-group.full-width{grid-column:1/-1;}
-.radio-group{display:flex;gap:16px;align-items:center;padding:11px 13px;background:var(--bg);border-radius:9px;border:2px solid var(--border);}
-.radio-group label{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:600;}
-.radio-group input[type=radio]{accent-color:var(--primary);width:16px;height:16px;}
-.btn-submit{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;border:none;padding:14px 32px;border-radius:10px;font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .2s;box-shadow:0 4px 15px rgba(26,92,56,.3);}
-.btn-submit:hover{transform:translateY(-2px);}
-.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-.btn-edit{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--primary-dark);border:none;padding:14px 32px;border-radius:10px;font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .2s;margin-right:12px;}
-.btn-edit:hover{transform:translateY(-2px);}
-.btn-review{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--primary-dark);border:none;padding:12px 28px;border-radius:10px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:all .2s;box-shadow:0 4px 15px rgba(201,168,76,.3);}
-.btn-review:hover{transform:translateY(-2px);}
-.btn-review:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-
+.field-group label{font-size:12px;font-weight:700;color:var(--primary-dark);margin-bottom:6px;}
+.field-group input,.field-group textarea{padding:11px 13px;border:2px solid var(--border);border-radius:9px;font-family:'Cairo';}
+.field-group input:disabled{background:#f5f5f5;cursor:not-allowed;}
+.radio-group{display:flex;gap:16px;padding:11px 13px;background:var(--bg);border-radius:9px;border:2px solid var(--border);}
+.btn-submit{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;border:none;padding:14px 32px;border-radius:10px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;}
+.btn-edit{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--primary-dark);border:none;padding:14px 32px;border-radius:10px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;margin-right:12px;}
+.btn-review{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--primary-dark);border:none;padding:12px 28px;border-radius:10px;font-weight:700;cursor:pointer;}
 .cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.cal-header h3{font-size:16px;font-weight:800;color:var(--primary-dark);}
-.cal-nav{display:flex;gap:8px;}
 .cal-nav button{background:var(--primary);color:white;border:none;width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:16px;}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
-.cal-day-name{text-align:center;font-size:10px;font-weight:700;color:var(--text-muted);padding:6px 1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cal-day-name{text-align:center;font-size:10px;font-weight:700;color:var(--text-muted);padding:6px;}
 .cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:12px;font-weight:600;background:var(--bg);color:var(--text);cursor:pointer;transition:all .2s;}
 .cal-day:hover{background:var(--primary-light);color:white;}
-.cal-day.today{border:2px solid var(--primary);color:var(--primary);font-weight:900;}
+.cal-day.today{border:2px solid var(--primary);color:var(--primary);}
 .cal-day.submitted{background:var(--success);color:white;}
-.cal-day.submitted:hover{background:var(--success);opacity:.8;}
 .cal-day.empty{background:transparent;cursor:default;}
-.cal-day.empty:hover{background:transparent;}
-
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-bottom:20px;}
-.stat-card{background:white;border-radius:12px;padding:18px;text-align:center;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.06);}
-.stat-card .stat-icon{font-size:26px;margin-bottom:8px;}
+.stat-card{background:white;border-radius:12px;padding:18px;text-align:center;border:1px solid var(--border);}
 .stat-card .stat-value{font-size:28px;font-weight:900;color:var(--primary);}
-.stat-card .stat-label{font-size:11px;color:var(--text-muted);font-weight:600;margin-top:4px;}
-
 .entity-detail-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:14px;}
-.entity-name{font-size:15px;font-weight:900;color:var(--primary-dark);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:8px;}
+.entity-name{font-size:15px;font-weight:900;color:var(--primary-dark);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gold);}
 .detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px;}
-.detail-item{background:white;border-radius:9px;padding:12px 10px;text-align:center;border:1px solid var(--border);}
+.detail-item{background:white;border-radius:9px;padding:12px;text-align:center;border:1px solid var(--border);}
 .detail-item .d-val{font-size:22px;font-weight:900;color:var(--primary);}
-.detail-item .d-lbl{font-size:11px;color:var(--text-muted);font-weight:600;margin-top:4px;line-height:1.4;}
-.detail-item.d-danger .d-val{color:var(--danger);}
-.detail-item.d-gold .d-val{color:#a07020;}
-.detail-notes{margin-top:12px;background:white;border-radius:8px;padding:12px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);border-right:4px solid var(--gold);}
-.detail-notes strong{color:var(--text);}
-
 .missing-section{margin-top:16px;background:#fff8f8;border:1px solid #f5c6cb;border-radius:10px;padding:16px;}
-.missing-title{color:var(--danger);font-weight:800;font-size:14px;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
-.missing-list{list-style:none;margin:0;padding:0;}
-.missing-list li{padding:8px 14px;border-radius:7px;font-size:13px;color:var(--danger);font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:5px;background:rgba(192,57,43,.06);border-right:3px solid var(--danger);}
-.missing-list li::before{content:"●";font-size:9px;flex-shrink:0;opacity:.7;}
-
+.missing-title{color:var(--danger);font-weight:800;display:flex;align-items:center;gap:6px;}
 .badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;}
 .badge-success{background:#d4edda;color:#155724;}
-.badge-danger{background:#f8d7da;color:#721c24;}
 .badge-warning{background:#fff3cd;color:#856404;}
-.sync-bar{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;margin-bottom:12px;}
+.sync-bar{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:8px;margin-bottom:12px;}
 .sync-bar.syncing{background:#e3f2fd;color:#1565c0;}
 .sync-bar.synced{background:#e8f5e9;color:#2e7d32;}
-.sync-bar.offline{background:#fff3e0;color:#e65100;}
-.review-done{color:var(--success);font-weight:800;font-size:14px;display:flex;align-items:center;gap:8px;}
-.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-120px);background:var(--success);color:white;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;z-index:9999;transition:transform .4s;box-shadow:0 8px 24px rgba(0,0,0,.2);display:flex;align-items:center;gap:10px;}
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-120px);background:var(--success);color:white;padding:14px 28px;border-radius:12px;font-weight:700;z-index:9999;transition:transform .4s;}
 .toast.show{transform:translateX(-50%) translateY(0);}
-.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:16px;font-size:16px;font-weight:700;color:var(--primary);}
+.toast.warning{background:var(--warning);}
+.toast.error{background:var(--danger);}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;}
 .spinner{width:48px;height:48px;border:5px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
-
-.accounts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:20px;}
-.account-card{background:white;border-radius:12px;padding:18px;border:1px solid var(--border);box-shadow:var(--shadow);cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.accounts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
+.account-card{background:white;border-radius:12px;padding:18px;border:1px solid var(--border);cursor:pointer;position:relative;}
 .account-card::before{content:"";position:absolute;top:0;right:0;width:5px;height:100%;}
 .account-card.role-supervisor::before{background:var(--primary);}
 .account-card.role-principal::before{background:var(--gold);}
-.account-card.role-boys_head::before{background:var(--primary-light);}
-.account-card.role-girls_head::before{background:#e91e8c;}
-.account-card.role-director::before{background:var(--owner);}
-.account-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.15);}
-.account-card-enter{position:absolute;top:50%;left:16px;transform:translateY(-50%);background:var(--primary);color:white;border:none;padding:7px 14px;border-radius:8px;font-family:'Cairo',sans-serif;font-size:12px;font-weight:700;cursor:pointer;opacity:0;transition:opacity .2s;}
-.account-card:hover .account-card-enter{opacity:1;}
-
-@media(max-width:600px){
-  .main-content{padding:14px;}.topbar{padding:10px 12px;}
-  .topbar-title h2{font-size:11px;}.form-grid{grid-template-columns:1fr 1fr;}
-  .detail-grid{grid-template-columns:repeat(2,1fr);}.stats-grid{grid-template-columns:repeat(2,1fr);}
-}
+.account-card-entity{font-size:14px;font-weight:800;color:var(--primary-dark);}
+.account-card-email{font-size:12px;color:var(--text-muted);}
+@media(max-width:600px){.main-content{padding:14px;}.form-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<div id="loadingOverlay" class="loading-overlay" style="display:none;">
-  <div class="spinner"></div>
-  <span id="loadingMsg">جارٍ التحقق...</span>
-</div>
+<div id="loadingOverlay" class="loading-overlay" style="display:none;"><div class="spinner"></div><span id="loadingMsg">جارٍ التحقق...</span></div>
 <div class="toast" id="toast"><i class="fas fa-check-circle" id="toastIcon"></i><span id="toastMsg"></span></div>
 
-<!-- AUTH PAGE -->
+<!-- ========== AUTH PAGE ========== -->
 <div class="auth-page" id="authPage">
   <div class="auth-box">
     <div class="auth-logo">
-      <img src="https://raw.githubusercontent.com/alzabidi9999/images/refs/heads/main/Remah_logo.jpeg" alt="شعار جمعية بيان">
+      <img src="https://raw.githubusercontent.com/alzabidi9999/images/refs/heads/main/Remah_logo.jpeg" alt="شعار">
       <h1>جمعية بيان لتحفيظ القرآن الكريم<br>برماح</h1>
       <p>نظام حصر الحضور والإنجاز التعليمي</p>
     </div>
@@ -185,151 +116,128 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="auth-tab" onclick="switchTab('register')">إنشاء حساب</div>
     </div>
     <div class="auth-error" id="authError"></div>
-    <div class="auth-info" id="authInfo"></div>
     <div id="loginForm">
-      <div class="form-group">
-        <label><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
-        <input type="email" id="loginEmail" placeholder="أدخل بريدك الإلكتروني">
-      </div>
-      <div class="form-group">
-        <label><i class="fas fa-lock"></i> كلمة المرور</label>
-        <input type="password" id="loginPass" placeholder="أدخل كلمة المرور">
-      </div>
-      <div class="remember-row">
-        <input type="checkbox" id="rememberMe">
-        <label for="rememberMe">تذكرني</label>
-      </div>
+      <div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="loginEmail"></div>
+      <div class="form-group"><label>كلمة المرور</label><input type="password" id="loginPass"></div>
+      <div class="remember-row"><input type="checkbox" id="rememberMe"><label>تذكرني</label></div>
       <button class="btn-primary" onclick="doLogin()"><i class="fas fa-sign-in-alt"></i> دخول</button>
     </div>
     <div id="registerForm" style="display:none">
-      <div class="form-group">
-        <label>البريد الإلكتروني</label>
-        <input type="email" id="regEmail" placeholder="أدخل بريدك الإلكتروني">
-      </div>
-      <div class="form-group">
-        <label>كلمة المرور</label>
-        <input type="password" id="regPass" placeholder="6 أحرف على الأقل">
-      </div>
-      <div class="form-group">
-        <label>تأكيد كلمة المرور</label>
-        <input type="password" id="regPass2" placeholder="أعد إدخال كلمة المرور">
-      </div>
+      <div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="regEmail"></div>
+      <div class="form-group"><label>كلمة المرور</label><input type="password" id="regPass" placeholder="6 أحرف على الأقل"></div>
+      <div class="form-group"><label>تأكيد كلمة المرور</label><input type="password" id="regPass2"></div>
       <button class="btn-primary" onclick="doRegister()"><i class="fas fa-user-plus"></i> إنشاء الحساب</button>
     </div>
   </div>
 </div>
 
-<!-- MAIN APP -->
+<!-- ========== MAIN APP ========== -->
 <div class="app" id="mainApp">
   <div class="topbar">
-    <div class="topbar-brand">
-      <img class="topbar-logo" src="https://raw.githubusercontent.com/alzabidi9999/images/refs/heads/main/Remah_logo.jpeg" alt="شعار بيان">
-      <div class="topbar-title">
-        <h2>جمعية بيان لتحفيظ القرآن الكريم - برماح</h2>
-        <p>نظام حصر الحضور والإنجاز التعليمي</p>
-      </div>
-    </div>
-    <div class="topbar-user">
-      <div class="user-badge" id="userBadge">مرحباً</div>
-      <button class="btn-logout" onclick="doLogout()"><i class="fas fa-sign-out-alt"></i> خروج</button>
-    </div>
+    <div class="topbar-brand"><img class="topbar-logo" src="https://raw.githubusercontent.com/alzabidi9999/images/refs/heads/main/Remah_logo.jpeg"><div class="topbar-title"><h2>جمعية بيان - برماح</h2><p>نظام حصر الحضور والإنجاز</p></div></div>
+    <div class="topbar-user"><div class="user-badge" id="userBadge"></div><button class="btn-logout" onclick="doLogout()"><i class="fas fa-sign-out-alt"></i> خروج</button></div>
   </div>
-
   <div id="ownerBar" style="display:none"></div>
-
   <div class="main-content">
+
     <!-- صفحة المالك -->
     <div class="page" id="pageOwner">
       <div class="section-title"><i class="fas fa-crown"></i> لوحة تحكم المالك</div>
-      <div class="card">
-        <div class="card-title"><i class="fas fa-mosque"></i> مشرفو مجمعات البنين</div>
-        <div class="accounts-grid" id="supervisorCards"></div>
-      </div>
-      <div class="card">
-        <div class="card-title"><i class="fas fa-school"></i> مديرات المدارس النسائية</div>
-        <div class="accounts-grid" id="principalCards"></div>
-      </div>
-      <div class="card">
-        <div class="card-title"><i class="fas fa-user-shield"></i> رؤساء الأقسام والمدير</div>
-        <div class="accounts-grid" id="headCards"></div>
-      </div>
+      <div class="card"><div class="card-title"><i class="fas fa-mosque"></i> مشرفو مجمعات البنين</div><div class="accounts-grid" id="supervisorCards"></div></div>
+      <div class="card"><div class="card-title"><i class="fas fa-school"></i> مديرات المدارس النسائية</div><div class="accounts-grid" id="principalCards"></div></div>
+      <div class="card"><div class="card-title"><i class="fas fa-user-shield"></i> رؤساء الأقسام</div><div class="accounts-grid" id="headCards"></div></div>
     </div>
 
-    <!-- باقي الصفحات - مختصرة للطول لكنها موجودة -->
+    <!-- صفحة المشرف (مجمعات البنين) -->
     <div class="page" id="pageSupervisor">
       <div class="section-title"><i class="fas fa-mosque"></i><span id="supervisorName"></span></div>
-      <div class="date-selector">
-        <label><i class="fas fa-calendar-alt"></i> التاريخ:</label>
-        <input type="date" id="supDate" onchange="loadSupervisorData()">
-      </div>
+      <div class="date-selector"><label><i class="fas fa-calendar-alt"></i> التاريخ:</label><input type="date" id="supDate" onchange="loadSupervisorData()"></div>
       <div class="card">
-        <div class="card-title">بيانات الحضور والإنجاز</div>
+        <div class="card-title"><i class="fas fa-clipboard-list"></i> بيانات الحضور والإنجاز</div>
         <div id="supSyncBar"></div>
         <div class="form-grid">
-          <div class="field-group"><label>إجمالي الطلاب</label><input type="number" id="f_total_students"></div>
-          <div class="field-group"><label>الطلاب الغائبون</label><input type="number" id="f_absent_students"></div>
-          <div class="field-group"><label>إجمالي المعلمين</label><input type="number" id="f_total_teachers"></div>
-          <div class="field-group"><label>المعلمون الغائبون</label><input type="number" id="f_absent_teachers"></div>
-          <div class="field-group"><label>إجمالي الإداريين</label><input type="number" id="f_total_admin"></div>
-          <div class="field-group"><label>الإداريون الغائبون</label><input type="number" id="f_absent_admin"></div>
-          <div class="field-group"><label>أوجه الحفظ والمراجعة</label><input type="number" id="f_total_hifz"></div>
-          <div class="field-group"><label>عدد الحلقات</label><input type="number" id="f_circles"></div>
-          <div class="field-group"><label>عدد المساجد</label><input type="number" id="f_mosques"></div>
-          <div class="field-group">
-            <label>التواصل مع المساجد</label>
-            <div class="radio-group">
-              <label><input type="radio" name="contact_mosques" value="نعم"> نعم</label>
-              <label><input type="radio" name="contact_mosques" value="لا"> لا</label>
-            </div>
-          </div>
-          <div class="field-group full-width"><label>الملاحظات</label><textarea id="f_notes"></textarea></div>
+          <div class="field-group"><label>إجمالي الطلاب</label><input type="number" id="f_total_students" min="0"></div>
+          <div class="field-group"><label>الطلاب الغائبون</label><input type="number" id="f_absent_students" min="0"></div>
+          <div class="field-group"><label>إجمالي المعلمين</label><input type="number" id="f_total_teachers" min="0"></div>
+          <div class="field-group"><label>المعلمون الغائبون</label><input type="number" id="f_absent_teachers" min="0"></div>
+          <div class="field-group"><label>إجمالي الإداريين</label><input type="number" id="f_total_admin" min="0"></div>
+          <div class="field-group"><label>الإداريون الغائبون</label><input type="number" id="f_absent_admin" min="0"></div>
+          <div class="field-group"><label>أوجه الحفظ والمراجعة</label><input type="number" id="f_total_hifz" min="0"></div>
+          <div class="field-group"><label>عدد الحلقات</label><input type="number" id="f_circles" min="0"></div>
+          <div class="field-group"><label>عدد المساجد</label><input type="number" id="f_mosques" min="0"></div>
+          <div class="field-group"><label>التواصل مع المساجد</label><div class="radio-group"><label><input type="radio" name="contact_mosques" value="نعم"> نعم</label><label><input type="radio" name="contact_mosques" value="لا"> لا</label></div></div>
+          <div class="field-group full-width"><label>الملاحظات</label><textarea id="f_notes" rows="3"></textarea></div>
         </div>
         <div style="display:flex;gap:12px">
-          <button class="btn-submit" onclick="submitSupervisor()"><i class="fas fa-paper-plane"></i> إرسال</button>
-          <button class="btn-edit" id="supEditBtn" onclick="enableEditSupervisor()" style="display:none"><i class="fas fa-edit"></i> تعديل</button>
+          <button class="btn-submit" id="supSubmitBtn" onclick="submitSupervisor()"><i class="fas fa-paper-plane"></i> إرسال البيانات</button>
+          <button class="btn-edit" id="supEditBtn" onclick="enableEditSupervisor()" style="display:none"><i class="fas fa-edit"></i> تعديل البيانات</button>
         </div>
+      </div>
+      <div class="card">
+        <div class="cal-header"><h3><i class="fas fa-calendar"></i> سجل الإدخال الشهري</h3><div class="cal-nav"><button onclick="changeCalMonth('sup',-1)">›</button><button onclick="changeCalMonth('sup',1)">‹</button></div></div>
+        <div id="supCalMonthLabel" style="text-align:center;font-weight:800;color:var(--primary);margin-bottom:10px"></div>
+        <div class="cal-grid" id="supCalGrid"></div>
+        <div style="display:flex;gap:16px;margin-top:12px;"><span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;background:var(--success);border-radius:4px"></span>تم الإدخال</span><span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;background:var(--bg);border:1px solid #ddd;border-radius:4px"></span>لم يتم</span></div>
       </div>
     </div>
 
     <!-- صفحة المديرة -->
     <div class="page" id="pagePrincipal">
       <div class="section-title"><i class="fas fa-school"></i><span id="principalName"></span></div>
-      <div class="date-selector">
-        <label><i class="fas fa-calendar-alt"></i> التاريخ:</label>
-        <input type="date" id="priDate" onchange="loadPrincipalData()">
-      </div>
+      <div class="date-selector"><label><i class="fas fa-calendar-alt"></i> التاريخ:</label><input type="date" id="priDate" onchange="loadPrincipalData()"></div>
       <div class="card">
-        <div class="card-title">بيانات الحضور والإنجاز</div>
+        <div class="card-title"><i class="fas fa-clipboard-list"></i> بيانات الحضور والإنجاز</div>
         <div id="priSyncBar"></div>
         <div class="form-grid">
-          <div class="field-group"><label>إجمالي الطالبات</label><input type="number" id="p_total_students"></div>
-          <div class="field-group"><label>الطالبات الغائبات</label><input type="number" id="p_absent_students"></div>
-          <div class="field-group"><label>إجمالي المعلمات</label><input type="number" id="p_total_teachers"></div>
-          <div class="field-group"><label>المعلمات الغائبات</label><input type="number" id="p_absent_teachers"></div>
-          <div class="field-group"><label>إجمالي الإداريات</label><input type="number" id="p_total_admin"></div>
-          <div class="field-group"><label>الإداريات الغائبات</label><input type="number" id="p_absent_admin"></div>
-          <div class="field-group"><label>أوجه الحفظ والمراجعة</label><input type="number" id="p_total_hifz"></div>
-          <div class="field-group"><label>عدد الفصول</label><input type="number" id="p_classes"></div>
-          <div class="field-group">
-            <label>زيارة الفصول</label>
-            <div class="radio-group">
-              <label><input type="radio" name="visit_classes" value="نعم"> نعم</label>
-              <label><input type="radio" name="visit_classes" value="لا"> لا</label>
-            </div>
-          </div>
-          <div class="field-group full-width"><label>الملاحظات</label><textarea id="p_notes"></textarea></div>
+          <div class="field-group"><label>إجمالي الطالبات</label><input type="number" id="p_total_students" min="0"></div>
+          <div class="field-group"><label>الطالبات الغائبات</label><input type="number" id="p_absent_students" min="0"></div>
+          <div class="field-group"><label>إجمالي المعلمات</label><input type="number" id="p_total_teachers" min="0"></div>
+          <div class="field-group"><label>المعلمات الغائبات</label><input type="number" id="p_absent_teachers" min="0"></div>
+          <div class="field-group"><label>إجمالي الإداريات</label><input type="number" id="p_total_admin" min="0"></div>
+          <div class="field-group"><label>الإداريات الغائبات</label><input type="number" id="p_absent_admin" min="0"></div>
+          <div class="field-group"><label>أوجه الحفظ والمراجعة</label><input type="number" id="p_total_hifz" min="0"></div>
+          <div class="field-group"><label>عدد الفصول</label><input type="number" id="p_classes" min="0"></div>
+          <div class="field-group"><label>زيارة الفصول</label><div class="radio-group"><label><input type="radio" name="visit_classes" value="نعم"> نعم</label><label><input type="radio" name="visit_classes" value="لا"> لا</label></div></div>
+          <div class="field-group full-width"><label>الملاحظات</label><textarea id="p_notes" rows="3"></textarea></div>
         </div>
         <div style="display:flex;gap:12px">
-          <button class="btn-submit" onclick="submitPrincipal()"><i class="fas fa-paper-plane"></i> إرسال</button>
-          <button class="btn-edit" id="priEditBtn" onclick="enableEditPrincipal()" style="display:none"><i class="fas fa-edit"></i> تعديل</button>
+          <button class="btn-submit" id="priSubmitBtn" onclick="submitPrincipal()"><i class="fas fa-paper-plane"></i> إرسال البيانات</button>
+          <button class="btn-edit" id="priEditBtn" onclick="enableEditPrincipal()" style="display:none"><i class="fas fa-edit"></i> تعديل البيانات</button>
         </div>
       </div>
+      <div class="card">
+        <div class="cal-header"><h3><i class="fas fa-calendar"></i> سجل الإدخال الشهري</h3><div class="cal-nav"><button onclick="changeCalMonth('pri',-1)">›</button><button onclick="changeCalMonth('pri',1)">‹</button></div></div>
+        <div id="priCalMonthLabel" style="text-align:center;font-weight:800;color:var(--primary);margin-bottom:10px"></div>
+        <div class="cal-grid" id="priCalGrid"></div>
+      </div>
     </div>
+
+    <!-- صفحة رئيس قسم البنين -->
+    <div class="page" id="pageBoysHead">
+      <div class="section-title"><i class="fas fa-user-shield"></i> رئيس قسم تعليم مجمعات البنين</div>
+      <div class="date-selector"><label><i class="fas fa-calendar-alt"></i> التاريخ:</label><input type="date" id="bhDate" onchange="loadBoysHeadReport()"></div>
+      <div id="boysHeadReport"></div>
+    </div>
+
+    <!-- صفحة رئيسة قسم البنات -->
+    <div class="page" id="pageGirlsHead">
+      <div class="section-title"><i class="fas fa-user-shield"></i> رئيسة قسم تعليم المدارس النسائية</div>
+      <div class="date-selector"><label><i class="fas fa-calendar-alt"></i> التاريخ:</label><input type="date" id="ghDate" onchange="loadGirlsHeadReport()"></div>
+      <div id="girlsHeadReport"></div>
+    </div>
+
+    <!-- صفحة مدير الشؤون التعليمية -->
+    <div class="page" id="pageDirector">
+      <div class="section-title"><i class="fas fa-university"></i> مدير الشؤون التعليمية</div>
+      <div class="date-selector"><label><i class="fas fa-calendar-alt"></i> التاريخ:</label><input type="date" id="dirDate" onchange="loadDirectorReport()"></div>
+      <div id="directorReport"></div>
+    </div>
+
   </div>
 </div>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbxQ64Op8TniiZxeUO-MRCxVS1As_FAov7wrFpCk6M9Km5hR631ZWALEPwELFKFYg4KkKg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwP8lb5n4gZWwvBqsFL3QvDHLPJoksG-qGI5wMt-boB2nUi2QHy90EbJr21esIjR094YQ/exec";
 const OWNER_EMAIL = "alzabidi9999@gmail.com";
 
 const ALLOWED_USERS = {
@@ -352,28 +260,22 @@ const ALLOWED_USERS = {
   [OWNER_EMAIL]: {role: "owner", entity: "المالك"}
 };
 
+const BOYS_COMPLEXES = ["مجمع الصديق", "مجمع الفاروق", "مجمع عثمان بن عفان", "مجمع علي بن أبي طالب", "مجمع بن فطيس"];
+const GIRLS_SCHOOLS = ["مدرسة الأميرة سارة أبوثنين", "مدرسة سعد النسائية", "مدرسة والدة مدعج البليدان", "مدرسة حفصة بنت عمر", "مدرسة خولة بنت حكيم", "مدرسة والد ناصر بن شلاش", "مدرسة الروضة الصباحية", "مدرسة دار مرزوقة"];
+
 let currentUser = null;
 let viewingAs = null;
-let sessionData = { records: {}, reviews: {} };
-let isEditMode = false;
+let calMonths = {sup: new Date(), pri: new Date(), bh: new Date(), gh: new Date(), dir: new Date()};
+let submittedDates = new Set(); // تخزين التواريخ المدخلة للمستخدم الحالي
+let allData = {}; // تخزين جميع البيانات من قاعدة البيانات
 
-function showLoading(msg) { 
-  document.getElementById("loadingMsg").textContent = msg; 
-  document.getElementById("loadingOverlay").style.display = "flex"; 
-}
-function hideLoading() { 
-  document.getElementById("loadingOverlay").style.display = "none"; 
-}
+function showLoading(msg) { document.getElementById("loadingMsg").innerHTML = msg; document.getElementById("loadingOverlay").style.display = "flex"; }
+function hideLoading() { document.getElementById("loadingOverlay").style.display = "none"; }
 
 async function callAPI(params, isPost = false, body = null) {
   try {
     if (isPost) {
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        mode: 'cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
+      const response = await fetch(API_URL, { method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       return await response.json();
     } else {
       const qs = new URLSearchParams(params).toString();
@@ -386,6 +288,19 @@ async function callAPI(params, isPost = false, body = null) {
   }
 }
 
+function showToast(msg, type = 'success') {
+  const toast = document.getElementById("toast");
+  const toastMsg = document.getElementById("toastMsg");
+  const toastIcon = document.getElementById("toastIcon");
+  toastMsg.textContent = msg;
+  toast.classList.remove('warning', 'error');
+  if (type === 'warning') { toast.classList.add('warning'); toastIcon.className = "fas fa-exclamation-triangle"; }
+  else if (type === 'error') { toast.classList.add('error'); toastIcon.className = "fas fa-times-circle"; }
+  else { toastIcon.className = "fas fa-check-circle"; }
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 3500);
+}
+
 function switchTab(tab) {
   document.getElementById("loginForm").style.display = tab === 'login' ? 'block' : 'none';
   document.getElementById("registerForm").style.display = tab === 'register' ? 'block' : 'none';
@@ -395,50 +310,382 @@ async function doRegister() {
   const email = document.getElementById("regEmail").value.trim().toLowerCase();
   const pass = document.getElementById("regPass").value;
   const pass2 = document.getElementById("regPass2").value;
-  
-  if (!email || !pass) return alert("يرجى إدخال البريد وكلمة المرور");
-  if (pass.length < 6) return alert("كلمة المرور يجب أن تكون 6 أحرف على الأقل");
-  if (pass !== pass2) return alert("كلمة المرور غير متطابقة");
-  if (!ALLOWED_USERS[email]) return alert("هذا البريد غير مسجل في النظام");
-  
+  if (!email || !pass) return showToast("يرجى إدخال البريد وكلمة المرور", 'error');
+  if (pass.length < 6) return showToast("كلمة المرور يجب أن تكون 6 أحرف على الأقل", 'error');
+  if (pass !== pass2) return showToast("كلمة المرور غير متطابقة", 'error');
+  if (!ALLOWED_USERS[email]) return showToast("هذا البريد غير مسجل في النظام", 'error');
   showLoading("جارٍ إنشاء الحساب...");
   const res = await callAPI(null, true, { type: "register", email, pass });
   hideLoading();
-  
-  if (res.status === "already_exists") alert("هذا البريد مسجل مسبقاً");
-  else if (res.status === "success") {
-    alert("تم إنشاء الحساب بنجاح");
-    switchTab('login');
-    document.getElementById("loginEmail").value = email;
-  } else alert("خطأ في الاتصال");
+  if (res.status === "already_exists") showToast("هذا البريد مسجل مسبقاً", 'warning');
+  else if (res.status === "success") { showToast("تم إنشاء الحساب بنجاح"); switchTab('login'); document.getElementById("loginEmail").value = email; }
+  else showToast("خطأ في الاتصال", 'error');
 }
 
 async function doLogin() {
   const email = document.getElementById("loginEmail").value.trim().toLowerCase();
   const pass = document.getElementById("loginPass").value;
-  
-  if (!email || !pass) return alert("يرجى إدخال البريد وكلمة المرور");
-  if (!ALLOWED_USERS[email]) return alert("هذا البريد غير مسجل في النظام");
-  
+  if (!email || !pass) return showToast("يرجى إدخال البريد وكلمة المرور", 'error');
+  if (!ALLOWED_USERS[email]) return showToast("هذا البريد غير مسجل في النظام", 'error');
   showLoading("جارٍ التحقق...");
   const res = await callAPI({ action: "login", email, pass });
   hideLoading();
-  
   if (res.status === "success") {
     currentUser = { email, ...ALLOWED_USERS[email] };
     document.getElementById("authPage").style.display = "none";
     document.getElementById("mainApp").style.display = "block";
-    document.getElementById("userBadge").innerHTML = currentUser.entity;
+    document.getElementById("userBadge").innerHTML = `<div>${currentUser.entity}</div><div style="font-size:10px">${email}</div>`;
+    await loadAllUserData(); // تحميل جميع بيانات المستخدم
     showDashboard();
-  } else if (res.status === "not_found") alert("لم يتم إنشاء حساب لهذا البريد");
-  else if (res.status === "wrong_pass") alert("كلمة المرور غير صحيحة");
-  else alert("خطأ في الاتصال");
+  } else if (res.status === "not_found") showToast("لم يتم إنشاء حساب لهذا البريد", 'warning');
+  else if (res.status === "wrong_pass") showToast("كلمة المرور غير صحيحة", 'error');
+  else showToast("خطأ في الاتصال", 'error');
 }
 
 function doLogout() {
-  currentUser = null;
+  currentUser = null; viewingAs = null;
   document.getElementById("mainApp").style.display = "none";
   document.getElementById("authPage").style.display = "flex";
+}
+
+function activeUser() { return viewingAs || currentUser; }
+
+async function loadAllUserData() {
+  const user = activeUser();
+  if (!user || user.role === 'owner') return;
+  showLoading("جارٍ تحميل البيانات...");
+  // جلب جميع البيانات للمستخدم من قاعدة البيانات
+  const res = await callAPI({ action: "getAll", type: user.role === 'supervisor' ? 'boys' : 'girls', entity: user.entity });
+  if (res.status === 'success' && res.data) {
+    allData = {};
+    submittedDates.clear();
+    res.data.forEach(record => {
+      const date = record.date;
+      allData[date] = record;
+      submittedDates.add(date);
+    });
+  }
+  hideLoading();
+  // تحديث التقويم
+  renderCalendar('sup', calMonths.sup, submittedDates);
+  renderCalendar('pri', calMonths.pri, submittedDates);
+}
+
+async function loadSupervisorData() {
+  const user = activeUser();
+  const date = document.getElementById("supDate").value;
+  if (!date) return;
+  
+  // التحقق من وجود بيانات مسبقاً
+  if (allData[date] && !confirm('⚠️ يوجد بيانات مسجلة لهذا التاريخ. هل تريد تعديلها؟')) {
+    // عرض البيانات الموجودة دون تمكين التعديل
+    const d = allData[date];
+    document.getElementById("f_total_students").value = d.total_students || 0;
+    document.getElementById("f_absent_students").value = d.absent_students || 0;
+    document.getElementById("f_total_teachers").value = d.total_teachers || 0;
+    document.getElementById("f_absent_teachers").value = d.absent_teachers || 0;
+    document.getElementById("f_total_admin").value = d.total_admin || 0;
+    document.getElementById("f_absent_admin").value = d.absent_admin || 0;
+    document.getElementById("f_total_hifz").value = d.total_hifz || 0;
+    document.getElementById("f_circles").value = d.circles || 0;
+    document.getElementById("f_mosques").value = d.mosques || 0;
+    if (d.contact_mosques) document.querySelectorAll("input[name=contact_mosques]").forEach(r => { if (r.value === d.contact_mosques) r.checked = true; });
+    document.getElementById("f_notes").value = d.notes || "";
+    document.getElementById("supEditBtn").style.display = "inline-flex";
+    document.getElementById("supSubmitBtn").querySelector('span')?.remove();
+    document.getElementById("supSubmitBtn").innerHTML = '<i class="fas fa-edit"></i> تحديث البيانات';
+    return;
+  }
+  
+  // بيانات جديدة - تفريغ الحقول
+  document.querySelectorAll("#pageSupervisor input[type=number], #pageSupervisor textarea").forEach(el => el.value = "");
+  document.querySelectorAll("input[name=contact_mosques]").forEach(r => r.checked = false);
+  document.getElementById("supEditBtn").style.display = "none";
+  document.getElementById("supSubmitBtn").innerHTML = '<i class="fas fa-paper-plane"></i> إرسال البيانات';
+}
+
+function enableEditSupervisor() {
+  // تمكين التعديل على البيانات الموجودة
+  showToast("✏️ يمكنك تعديل البيانات ثم الضغط على تحديث");
+}
+
+async function submitSupervisor() {
+  const user = activeUser();
+  const date = document.getElementById("supDate").value;
+  if (!date) return showToast("يرجى تحديد التاريخ", 'error');
+  
+  const contact = document.querySelector("input[name=contact_mosques]:checked")?.value;
+  if (!contact) return showToast("يرجى تحديد هل تم التواصل مع جميع المساجد", 'error');
+  
+  // التحقق من الحقول المطلوبة
+  const required = ["f_total_students", "f_absent_students", "f_total_teachers", "f_absent_teachers", "f_total_admin", "f_absent_admin", "f_total_hifz", "f_circles", "f_mosques"];
+  for (let id of required) {
+    if (document.getElementById(id).value === "") return showToast(`يرجى تعبئة جميع الحقول الإلزامية`, 'error');
+  }
+  
+  // التحقق من عدم وجود بيانات مسبقاً (لمنع الإدخال المكرر)
+  if (!allData[date] && submittedDates.has(date)) {
+    showToast("⚠️ عذراً، تم إدخال بيانات هذا التاريخ مسبقاً. يمكنك تعديلها بدلاً من إدخال جديد.", 'warning');
+    return;
+  }
+  
+  const payload = {
+    type: "boys",
+    date: date,
+    entity: user.entity,
+    total_students: +document.getElementById("f_total_students").value,
+    absent_students: +document.getElementById("f_absent_students").value,
+    total_teachers: +document.getElementById("f_total_teachers").value,
+    absent_teachers: +document.getElementById("f_absent_teachers").value,
+    total_admin: +document.getElementById("f_total_admin").value,
+    absent_admin: +document.getElementById("f_absent_admin").value,
+    total_hifz: +document.getElementById("f_total_hifz").value,
+    circles: +document.getElementById("f_circles").value,
+    mosques: +document.getElementById("f_mosques").value,
+    contact_mosques: contact,
+    notes: document.getElementById("f_notes").value
+  };
+  
+  showLoading("جارٍ الحفظ...");
+  const res = await callAPI(null, true, payload);
+  hideLoading();
+  
+  if (res.status === "success" || res.status === "updated") {
+    showToast(allData[date] ? "✅ تم تحديث البيانات بنجاح" : "✅ تم إرسال البيانات وحفظها");
+    await loadAllUserData(); // إعادة تحميل البيانات
+    // تحديث التقويم
+    renderCalendar('sup', calMonths.sup, submittedDates);
+    document.getElementById("supEditBtn").style.display = "none";
+    document.getElementById("supSubmitBtn").innerHTML = '<i class="fas fa-paper-plane"></i> إرسال البيانات';
+  } else if (res.status === "duplicate") {
+    showToast("⚠️ عذراً، تم إدخال بيانات هذا التاريخ مسبقاً ولا يمكن إدخال بيانات مكررة.", 'warning');
+  } else {
+    showToast("❌ فشل الحفظ - تحقق من الاتصال", 'error');
+  }
+}
+
+// دوال المديرة (مشابهة لدوال المشرف)
+async function loadPrincipalData() {
+  const user = activeUser();
+  const date = document.getElementById("priDate").value;
+  if (!date) return;
+  if (allData[date] && !confirm('⚠️ يوجد بيانات مسجلة لهذا التاريخ. هل تريد تعديلها؟')) {
+    const d = allData[date];
+    document.getElementById("p_total_students").value = d.total_students || 0;
+    document.getElementById("p_absent_students").value = d.absent_students || 0;
+    document.getElementById("p_total_teachers").value = d.total_teachers || 0;
+    document.getElementById("p_absent_teachers").value = d.absent_teachers || 0;
+    document.getElementById("p_total_admin").value = d.total_admin || 0;
+    document.getElementById("p_absent_admin").value = d.absent_admin || 0;
+    document.getElementById("p_total_hifz").value = d.total_hifz || 0;
+    document.getElementById("p_classes").value = d.classes || 0;
+    if (d.visit_classes) document.querySelectorAll("input[name=visit_classes]").forEach(r => { if (r.value === d.visit_classes) r.checked = true; });
+    document.getElementById("p_notes").value = d.notes || "";
+    document.getElementById("priEditBtn").style.display = "inline-flex";
+    document.getElementById("priSubmitBtn").innerHTML = '<i class="fas fa-edit"></i> تحديث البيانات';
+    return;
+  }
+  document.querySelectorAll("#pagePrincipal input[type=number], #pagePrincipal textarea").forEach(el => el.value = "");
+  document.querySelectorAll("input[name=visit_classes]").forEach(r => r.checked = false);
+  document.getElementById("priEditBtn").style.display = "none";
+  document.getElementById("priSubmitBtn").innerHTML = '<i class="fas fa-paper-plane"></i> إرسال البيانات';
+}
+
+function enableEditPrincipal() { showToast("✏️ يمكنك تعديل البيانات ثم الضغط على تحديث"); }
+
+async function submitPrincipal() {
+  const user = activeUser();
+  const date = document.getElementById("priDate").value;
+  if (!date) return showToast("يرجى تحديد التاريخ", 'error');
+  const visit = document.querySelector("input[name=visit_classes]:checked")?.value;
+  if (!visit) return showToast("يرجى تحديد هل تمت زيارة جميع الفصول", 'error');
+  const required = ["p_total_students", "p_absent_students", "p_total_teachers", "p_absent_teachers", "p_total_admin", "p_absent_admin", "p_total_hifz", "p_classes"];
+  for (let id of required) if (document.getElementById(id).value === "") return showToast(`يرجى تعبئة جميع الحقول الإلزامية`, 'error');
+  if (!allData[date] && submittedDates.has(date)) { showToast("⚠️ عذراً، تم إدخال بيانات هذا التاريخ مسبقاً.", 'warning'); return; }
+  const payload = { type: "girls", date, entity: user.entity, total_students: +document.getElementById("p_total_students").value, absent_students: +document.getElementById("p_absent_students").value, total_teachers: +document.getElementById("p_total_teachers").value, absent_teachers: +document.getElementById("p_absent_teachers").value, total_admin: +document.getElementById("p_total_admin").value, absent_admin: +document.getElementById("p_absent_admin").value, total_hifz: +document.getElementById("p_total_hifz").value, classes: +document.getElementById("p_classes").value, visit_classes: visit, notes: document.getElementById("p_notes").value };
+  showLoading("جارٍ الحفظ...");
+  const res = await callAPI(null, true, payload);
+  hideLoading();
+  if (res.status === "success" || res.status === "updated") { showToast(allData[date] ? "✅ تم تحديث البيانات" : "✅ تم حفظ البيانات"); await loadAllUserData(); renderCalendar('pri', calMonths.pri, submittedDates); }
+  else if (res.status === "duplicate") showToast("⚠️ تم إدخال هذا التاريخ مسبقاً", 'warning');
+  else showToast("❌ فشل الحفظ", 'error');
+}
+
+// دوال التقارير لرؤساء الأقسام
+async function loadBoysHeadReport() {
+  const date = document.getElementById("bhDate").value;
+  if (!date) return;
+  showLoading("جارٍ تحميل التقارير...");
+  const reportDiv = document.getElementById("boysHeadReport");
+  reportDiv.innerHTML = '<div class="sync-bar syncing"><i class="fas fa-spinner fa-spin"></i> جارٍ التحميل...</div>';
+  
+  // جلب بيانات جميع مجمعات البنين لهذا التاريخ
+  const allBoysData = [];
+  for (let complex of BOYS_COMPLEXES) {
+    const res = await callAPI({ action: "getSingle", type: "boys", entity: complex, date });
+    if (res.status === "success" && res.data) allBoysData.push(res.data);
+  }
+  
+  renderBoysHeadReport(date, allBoysData);
+  hideLoading();
+}
+
+function renderBoysHeadReport(date, data) {
+  // حساب الإجماليات
+  let totals = { total_students: 0, absent_students: 0, total_teachers: 0, absent_teachers: 0, total_admin: 0, absent_admin: 0, total_hifz: 0, circles: 0, mosques: 0 };
+  data.forEach(d => {
+    totals.total_students += d.total_students || 0;
+    totals.absent_students += d.absent_students || 0;
+    totals.total_teachers += d.total_teachers || 0;
+    totals.absent_teachers += d.absent_teachers || 0;
+    totals.total_admin += d.total_admin || 0;
+    totals.absent_admin += d.absent_admin || 0;
+    totals.total_hifz += d.total_hifz || 0;
+    totals.circles += d.circles || 0;
+    totals.mosques += d.mosques || 0;
+  });
+  
+  const submitted = data.map(d => d.entity);
+  const missing = BOYS_COMPLEXES.filter(c => !submitted.includes(c));
+  
+  let html = `<div class="stats-grid">
+    <div class="stat-card"><div class="stat-value">${totals.total_students}</div><div class="stat-label">إجمالي الطلاب</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--danger)">${totals.absent_students}</div><div class="stat-label">الطلاب الغائبون</div></div>
+    <div class="stat-card"><div class="stat-value">${totals.total_teachers}</div><div class="stat-label">إجمالي المعلمين</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--warning)">${totals.absent_teachers}</div><div class="stat-label">المعلمون الغائبون</div></div>
+    <div class="stat-card"><div class="stat-value">${totals.total_admin}</div><div class="stat-label">إجمالي الإداريين</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--warning)">${totals.absent_admin}</div><div class="stat-label">الإداريون الغائبون</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:#a07020">${totals.total_hifz}</div><div class="stat-label">أوجه الحفظ</div></div>
+    <div class="stat-card"><div class="stat-value">${totals.circles}</div><div class="stat-label">عدد الحلقات</div></div>
+    <div class="stat-card"><div class="stat-value">${totals.mosques}</div><div class="stat-label">المساجد التابعة</div></div>
+  </div>`;
+  
+  html += `<div class="card"><div class="card-title">تفاصيل مجمعات البنين - ${date}</div>`;
+  if (data.length > 0) {
+    html += `<div class="entity-detail-card">`;
+    data.forEach(d => {
+      html += `<div class="entity-name">🏛️ ${d.entity}</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="d-val">${d.total_students||0}</div><div class="d-lbl">الطلاب</div></div>
+        <div class="detail-item"><div class="d-val">${d.absent_students||0}</div><div class="d-lbl">الغائبون</div></div>
+        <div class="detail-item"><div class="d-val">${d.total_teachers||0}</div><div class="d-lbl">المعلمين</div></div>
+        <div class="detail-item"><div class="d-val">${d.total_hifz||0}</div><div class="d-lbl">أوجه الحفظ</div></div>
+        <div class="detail-item"><div class="d-val">${d.circles||0}</div><div class="d-lbl">الحلقات</div></div>
+        <div class="detail-item"><div class="d-val">${d.mosques||0}</div><div class="d-lbl">المساجد</div></div>
+      </div>`;
+      if (d.notes) html += `<div class="detail-notes">📝 ${d.notes}</div>`;
+    });
+    html += `</div>`;
+  } else {
+    html += `<p style="text-align:center;padding:20px">لا توجد بيانات مدخلة لهذا التاريخ</p>`;
+  }
+  if (missing.length > 0) html += `<div class="missing-section"><div class="missing-title">⚠️ المجمعات التي لم تدخل بياناتها</div><ul class="missing-list">${missing.map(m => `<li>${m}</li>`).join("")}</ul></div>`;
+  html += `<div style="margin-top:20px"><button class="btn-review" onclick="markBoysHeadReview('${date}')"><i class="fas fa-eye"></i> تم الاطلاع</button></div></div>`;
+  document.getElementById("boysHeadReport").innerHTML = html;
+}
+
+async function markBoysHeadReview(date) {
+  showLoading("جارٍ تسجيل الاطلاع...");
+  const res = await callAPI(null, true, { type: "review", role: "boys_head", date });
+  hideLoading();
+  if (res.status === "success") showToast("✅ تم تسجيل الاطلاع");
+  else showToast("⚠️ فشل تسجيل الاطلاع", 'error');
+}
+
+async function loadGirlsHeadReport() {
+  const date = document.getElementById("ghDate").value;
+  if (!date) return;
+  showLoading("جارٍ تحميل التقارير...");
+  const reportDiv = document.getElementById("girlsHeadReport");
+  reportDiv.innerHTML = '<div class="sync-bar syncing"><i class="fas fa-spinner fa-spin"></i> جارٍ التحميل...</div>';
+  const allGirlsData = [];
+  for (let school of GIRLS_SCHOOLS) {
+    const res = await callAPI({ action: "getSingle", type: "girls", entity: school, date });
+    if (res.status === "success" && res.data) allGirlsData.push(res.data);
+  }
+  renderGirlsHeadReport(date, allGirlsData);
+  hideLoading();
+}
+
+function renderGirlsHeadReport(date, data) {
+  let totals = { total_students: 0, absent_students: 0, total_teachers: 0, absent_teachers: 0, total_admin: 0, absent_admin: 0, total_hifz: 0, classes: 0 };
+  data.forEach(d => { totals.total_students += d.total_students||0; totals.absent_students += d.absent_students||0; totals.total_teachers += d.total_teachers||0; totals.absent_teachers += d.absent_teachers||0; totals.total_admin += d.total_admin||0; totals.absent_admin += d.absent_admin||0; totals.total_hifz += d.total_hifz||0; totals.classes += d.classes||0; });
+  const submitted = data.map(d => d.entity);
+  const missing = GIRLS_SCHOOLS.filter(s => !submitted.includes(s));
+  let html = `<div class="stats-grid"><div class="stat-card"><div class="stat-value">${totals.total_students}</div><div class="stat-label">إجمالي الطالبات</div></div><div class="stat-card"><div class="stat-value" style="color:var(--danger)">${totals.absent_students}</div><div class="stat-label">الطالبات الغائبات</div></div><div class="stat-card"><div class="stat-value">${totals.total_teachers}</div><div class="stat-label">إجمالي المعلمات</div></div><div class="stat-card"><div class="stat-value" style="color:var(--warning)">${totals.absent_teachers}</div><div class="stat-label">المعلمات الغائبات</div></div><div class="stat-card"><div class="stat-value">${totals.total_hifz}</div><div class="stat-label">أوجه الحفظ</div></div><div class="stat-card"><div class="stat-value">${totals.classes}</div><div class="stat-label">عدد الفصول</div></div></div>`;
+  html += `<div class="card"><div class="card-title">تفاصيل المدارس النسائية - ${date}</div>`;
+  if (data.length > 0) data.forEach(d => { html += `<div class="entity-detail-card"><div class="entity-name">🏫 ${d.entity}</div><div class="detail-grid"><div class="detail-item"><div class="d-val">${d.total_students||0}</div><div class="d-lbl">الطالبات</div></div><div class="detail-item"><div class="d-val">${d.absent_students||0}</div><div class="d-lbl">الغائبات</div></div><div class="detail-item"><div class="d-val">${d.total_teachers||0}</div><div class="d-lbl">المعلمات</div></div><div class="detail-item"><div class="d-val">${d.total_hifz||0}</div><div class="d-lbl">أوجه الحفظ</div></div><div class="detail-item"><div class="d-val">${d.classes||0}</div><div class="d-lbl">الفصول</div></div></div>${d.notes?`<div class="detail-notes">📝 ${d.notes}</div>`:''}</div>`; });
+  else html += `<p style="text-align:center;padding:20px">لا توجد بيانات مدخلة</p>`;
+  if (missing.length > 0) html += `<div class="missing-section"><div class="missing-title">⚠️ المدارس التي لم تدخل بياناتها</div><ul class="missing-list">${missing.map(m => `<li>${m}</li>`).join("")}</ul></div>`;
+  html += `</div>`;
+  document.getElementById("girlsHeadReport").innerHTML = html;
+}
+
+async function loadDirectorReport() {
+  const date = document.getElementById("dirDate").value;
+  if (!date) return;
+  showLoading("جارٍ تحميل التقرير الشامل...");
+  const allBoysData = [], allGirlsData = [];
+  for (let complex of BOYS_COMPLEXES) { const res = await callAPI({ action: "getSingle", type: "boys", entity: complex, date }); if (res.status === "success" && res.data) allBoysData.push(res.data); }
+  for (let school of GIRLS_SCHOOLS) { const res = await callAPI({ action: "getSingle", type: "girls", entity: school, date }); if (res.status === "success" && res.data) allGirlsData.push(res.data); }
+  renderDirectorReport(date, allBoysData, allGirlsData);
+  hideLoading();
+}
+
+function renderDirectorReport(date, boysData, girlsData) {
+  let totals = { total_students: 0, absent_students: 0, total_teachers: 0, absent_teachers: 0, total_admin: 0, absent_admin: 0, total_hifz: 0, circles: 0, classes: 0, mosques: 0 };
+  boysData.forEach(d => { totals.total_students += d.total_students||0; totals.absent_students += d.absent_students||0; totals.total_teachers += d.total_teachers||0; totals.absent_teachers += d.absent_teachers||0; totals.total_admin += d.total_admin||0; totals.absent_admin += d.absent_admin||0; totals.total_hifz += d.total_hifz||0; totals.circles += d.circles||0; totals.mosques += d.mosques||0; });
+  girlsData.forEach(d => { totals.total_students += d.total_students||0; totals.absent_students += d.absent_students||0; totals.total_teachers += d.total_teachers||0; totals.absent_teachers += d.absent_teachers||0; totals.total_admin += d.total_admin||0; totals.absent_admin += d.absent_admin||0; totals.total_hifz += d.total_hifz||0; totals.classes += d.classes||0; });
+  let html = `<div class="stats-grid"><div class="stat-card"><div class="stat-value">${totals.total_students}</div><div class="stat-label">إجمالي الطلاب والطالبات</div></div><div class="stat-card"><div class="stat-value" style="color:var(--danger)">${totals.absent_students}</div><div class="stat-label">الغائبون والغائبات</div></div><div class="stat-card"><div class="stat-value">${totals.total_teachers}</div><div class="stat-label">إجمالي المعلمين والمعلمات</div></div><div class="stat-card"><div class="stat-value" style="color:var(--warning)">${totals.absent_teachers}</div><div class="stat-label">المعلمون الغائبون</div></div><div class="stat-card"><div class="stat-value">${totals.total_admin}</div><div class="stat-label">إجمالي الإداريين</div></div><div class="stat-card"><div class="stat-value" style="color:var(--warning)">${totals.absent_admin}</div><div class="stat-label">الإداريون الغائبون</div></div><div class="stat-card"><div class="stat-value" style="color:#a07020">${totals.total_hifz}</div><div class="stat-label">أوجه الحفظ والمراجعة</div></div><div class="stat-card"><div class="stat-value">${totals.circles+totals.classes}</div><div class="stat-label">الحلقات والفصول</div></div><div class="stat-card"><div class="stat-value">${totals.mosques}</div><div class="stat-label">المساجد التابعة</div></div></div>`;
+  html += `<div class="card"><div class="card-title">🏛️ مجمعات البنين</div>${boysData.map(d => `<div class="entity-detail-card"><div class="entity-name">${d.entity}</div><div class="detail-grid"><div class="detail-item"><div class="d-val">${d.total_students||0}</div><div class="d-lbl">الطلاب</div></div><div class="detail-item"><div class="d-val">${d.absent_students||0}</div><div class="d-lbl">الغائبون</div></div><div class="detail-item"><div class="d-val">${d.total_teachers||0}</div><div class="d-lbl">المعلمين</div></div><div class="detail-item"><div class="d-val">${d.total_hifz||0}</div><div class="d-lbl">أوجه الحفظ</div></div></div>${d.notes?`<div class="detail-notes">📝 ${d.notes}</div>`:''}</div>`).join('') || '<p>لا توجد بيانات</p>'}</div>`;
+  html += `<div class="card"><div class="card-title">🏫 المدارس النسائية</div>${girlsData.map(d => `<div class="entity-detail-card"><div class="entity-name">${d.entity}</div><div class="detail-grid"><div class="detail-item"><div class="d-val">${d.total_students||0}</div><div class="d-lbl">الطالبات</div></div><div class="detail-item"><div class="d-val">${d.absent_students||0}</div><div class="d-lbl">الغائبات</div></div><div class="detail-item"><div class="d-val">${d.total_teachers||0}</div><div class="d-lbl">المعلمات</div></div><div class="detail-item"><div class="d-val">${d.total_hifz||0}</div><div class="d-lbl">أوجه الحفظ</div></div></div>${d.notes?`<div class="detail-notes">📝 ${d.notes}</div>`:''}</div>`).join('') || '<p>لا توجد بيانات</p>'}</div>`;
+  document.getElementById("directorReport").innerHTML = html;
+}
+
+// دوال التقويم
+const ARABIC_MONTHS = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+const ARABIC_DAYS = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+
+function renderCalendar(prefix, month, submittedSet) {
+  const grid = document.getElementById(prefix + "CalGrid");
+  const label = document.getElementById(prefix + "CalMonthLabel");
+  if (!grid) return;
+  label.textContent = ARABIC_MONTHS[month.getMonth()] + " " + month.getFullYear();
+  grid.innerHTML = ARABIC_DAYS.map(d => `<div class="cal-day-name">${d}</div>`).join("");
+  const firstDay = new Date(month.getFullYear(), month.getMonth(), 1).getDay();
+  const daysInMonth = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+  const today = new Date().toISOString().slice(0,10);
+  for (let i = 0; i < firstDay; i++) grid.innerHTML += `<div class="cal-day empty"></div>`;
+  for (let d = 1; d <= daysInMonth; d++) {
+    const ds = `${month.getFullYear()}-${String(month.getMonth()+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    const done = submittedSet.has(ds);
+    const isToday = ds === today;
+    grid.innerHTML += `<div class="cal-day ${done ? "submitted" : ""} ${isToday && !done ? "today" : ""}" onclick="onDayClick('${prefix}','${ds}')">${d}</div>`;
+  }
+}
+
+function onDayClick(prefix, date) {
+  if (prefix === 'sup') {
+    document.getElementById("supDate").value = date;
+    loadSupervisorData();
+  } else if (prefix === 'pri') {
+    document.getElementById("priDate").value = date;
+    loadPrincipalData();
+  } else if (prefix === 'bh') {
+    document.getElementById("bhDate").value = date;
+    loadBoysHeadReport();
+  } else if (prefix === 'gh') {
+    document.getElementById("ghDate").value = date;
+    loadGirlsHeadReport();
+  } else if (prefix === 'dir') {
+    document.getElementById("dirDate").value = date;
+    loadDirectorReport();
+  }
+}
+
+function changeCalMonth(prefix, dir) {
+  calMonths[prefix] = new Date(calMonths[prefix].getFullYear(), calMonths[prefix].getMonth() + dir, 1);
+  renderCalendar(prefix, calMonths[prefix], submittedDates);
 }
 
 function showDashboard() {
@@ -449,11 +696,22 @@ function showDashboard() {
   } else if (currentUser.role === "supervisor") {
     document.getElementById("supervisorName").textContent = currentUser.entity;
     document.getElementById("pageSupervisor").classList.add("active");
+    renderCalendar('sup', calMonths.sup, submittedDates);
     loadSupervisorData();
   } else if (currentUser.role === "principal") {
     document.getElementById("principalName").textContent = currentUser.entity;
     document.getElementById("pagePrincipal").classList.add("active");
+    renderCalendar('pri', calMonths.pri, submittedDates);
     loadPrincipalData();
+  } else if (currentUser.role === "boys_head") {
+    document.getElementById("pageBoysHead").classList.add("active");
+    loadBoysHeadReport();
+  } else if (currentUser.role === "girls_head") {
+    document.getElementById("pageGirlsHead").classList.add("active");
+    loadGirlsHeadReport();
+  } else if (currentUser.role === "director") {
+    document.getElementById("pageDirector").classList.add("active");
+    loadDirectorReport();
   }
 }
 
@@ -461,11 +719,7 @@ function renderOwnerDashboard() {
   const supervisors = [], principals = [], heads = [];
   Object.entries(ALLOWED_USERS).forEach(([email, u]) => {
     if (email === OWNER_EMAIL) return;
-    const card = `<div class="account-card role-${u.role}" onclick="ownerEnterAccount('${email}')">
-      <div class="account-card-entity">${u.entity}</div>
-      <div class="account-card-email">${email}</div>
-      <button class="account-card-enter">دخول</button>
-    </div>`;
+    const card = `<div class="account-card role-${u.role}" onclick="ownerEnterAccount('${email}')"><div class="account-card-entity">${u.entity}</div><div class="account-card-email">${email}</div></div>`;
     if (u.role === "supervisor") supervisors.push(card);
     else if (u.role === "principal") principals.push(card);
     else heads.push(card);
@@ -481,182 +735,25 @@ function ownerEnterAccount(email) {
   if (viewingAs.role === "supervisor") {
     document.getElementById("supervisorName").textContent = viewingAs.entity;
     document.getElementById("pageSupervisor").classList.add("active");
+    loadAllUserData();
+    renderCalendar('sup', calMonths.sup, submittedDates);
     loadSupervisorData();
   } else if (viewingAs.role === "principal") {
     document.getElementById("principalName").textContent = viewingAs.entity;
     document.getElementById("pagePrincipal").classList.add("active");
+    loadAllUserData();
+    renderCalendar('pri', calMonths.pri, submittedDates);
     loadPrincipalData();
   }
 }
 
-function activeUser() { return viewingAs || currentUser; }
-
-async function loadSupervisorData() {
-  const user = activeUser();
-  const date = document.getElementById("supDate").value;
-  if (!date) return;
-  
-  isEditMode = false;
-  document.getElementById("supEditBtn").style.display = "none";
-  
-  const res = await callAPI({ action: "getSingle", type: "boys", entity: user.entity, date });
-  
-  if (res.status === "success" && res.data) {
-    const d = res.data;
-    document.getElementById("f_total_students").value = d.total_students || 0;
-    document.getElementById("f_absent_students").value = d.absent_students || 0;
-    document.getElementById("f_total_teachers").value = d.total_teachers || 0;
-    document.getElementById("f_absent_teachers").value = d.absent_teachers || 0;
-    document.getElementById("f_total_admin").value = d.total_admin || 0;
-    document.getElementById("f_absent_admin").value = d.absent_admin || 0;
-    document.getElementById("f_total_hifz").value = d.total_hifz || 0;
-    document.getElementById("f_circles").value = d.circles || 0;
-    document.getElementById("f_mosques").value = d.mosques || 0;
-    if (d.contact_mosques) {
-      document.querySelectorAll("input[name=contact_mosques]").forEach(r => {
-        if (r.value === d.contact_mosques) r.checked = true;
-      });
-    }
-    document.getElementById("f_notes").value = d.notes || "";
-    document.getElementById("supEditBtn").style.display = "inline-flex";
-    showToast("📋 تم تحميل البيانات المسجلة");
-  } else {
-    document.querySelectorAll("#pageSupervisor input[type=number], #pageSupervisor textarea").forEach(el => el.value = "");
-    document.querySelectorAll("input[name=contact_mosques]").forEach(r => r.checked = false);
-  }
-}
-
-function enableEditSupervisor() {
-  isEditMode = true;
-  showToast("✏️ يمكنك تعديل البيانات ثم الضغط على إرسال");
-}
-
-async function submitSupervisor() {
-  const user = activeUser();
-  const date = document.getElementById("supDate").value;
-  if (!date) return alert("يرجى تحديد التاريخ");
-  
-  const contact = document.querySelector("input[name=contact_mosques]:checked")?.value;
-  if (!contact) return alert("يرجى تحديد هل تم التواصل مع جميع المساجد");
-  
-  const payload = {
-    type: "boys",
-    date: date,
-    entity: user.entity,
-    total_students: +document.getElementById("f_total_students").value || 0,
-    absent_students: +document.getElementById("f_absent_students").value || 0,
-    total_teachers: +document.getElementById("f_total_teachers").value || 0,
-    absent_teachers: +document.getElementById("f_absent_teachers").value || 0,
-    total_admin: +document.getElementById("f_total_admin").value || 0,
-    absent_admin: +document.getElementById("f_absent_admin").value || 0,
-    total_hifz: +document.getElementById("f_total_hifz").value || 0,
-    circles: +document.getElementById("f_circles").value || 0,
-    mosques: +document.getElementById("f_mosques").value || 0,
-    contact_mosques: contact,
-    notes: document.getElementById("f_notes").value
-  };
-  
-  showLoading("جارٍ الحفظ...");
-  const res = await callAPI(null, true, payload);
-  hideLoading();
-  
-  if (res.status === "success" || res.status === "updated") {
-    showToast(isEditMode ? "✅ تم تحديث البيانات" : "✅ تم حفظ البيانات");
-    await loadSupervisorData();
-  } else {
-    alert("❌ فشل الحفظ - تحقق من الاتصال");
-  }
-}
-
-async function loadPrincipalData() {
-  const user = activeUser();
-  const date = document.getElementById("priDate").value;
-  if (!date) return;
-  
-  isEditMode = false;
-  document.getElementById("priEditBtn").style.display = "none";
-  
-  const res = await callAPI({ action: "getSingle", type: "girls", entity: user.entity, date });
-  
-  if (res.status === "success" && res.data) {
-    const d = res.data;
-    document.getElementById("p_total_students").value = d.total_students || 0;
-    document.getElementById("p_absent_students").value = d.absent_students || 0;
-    document.getElementById("p_total_teachers").value = d.total_teachers || 0;
-    document.getElementById("p_absent_teachers").value = d.absent_teachers || 0;
-    document.getElementById("p_total_admin").value = d.total_admin || 0;
-    document.getElementById("p_absent_admin").value = d.absent_admin || 0;
-    document.getElementById("p_total_hifz").value = d.total_hifz || 0;
-    document.getElementById("p_classes").value = d.classes || 0;
-    if (d.visit_classes) {
-      document.querySelectorAll("input[name=visit_classes]").forEach(r => {
-        if (r.value === d.visit_classes) r.checked = true;
-      });
-    }
-    document.getElementById("p_notes").value = d.notes || "";
-    document.getElementById("priEditBtn").style.display = "inline-flex";
-    showToast("📋 تم تحميل البيانات المسجلة");
-  } else {
-    document.querySelectorAll("#pagePrincipal input[type=number], #pagePrincipal textarea").forEach(el => el.value = "");
-    document.querySelectorAll("input[name=visit_classes]").forEach(r => r.checked = false);
-  }
-}
-
-function enableEditPrincipal() {
-  isEditMode = true;
-  showToast("✏️ يمكنك تعديل البيانات ثم الضغط على إرسال");
-}
-
-async function submitPrincipal() {
-  const user = activeUser();
-  const date = document.getElementById("priDate").value;
-  if (!date) return alert("يرجى تحديد التاريخ");
-  
-  const visit = document.querySelector("input[name=visit_classes]:checked")?.value;
-  if (!visit) return alert("يرجى تحديد هل تمت زيارة جميع الفصول");
-  
-  const payload = {
-    type: "girls",
-    date: date,
-    entity: user.entity,
-    total_students: +document.getElementById("p_total_students").value || 0,
-    absent_students: +document.getElementById("p_absent_students").value || 0,
-    total_teachers: +document.getElementById("p_total_teachers").value || 0,
-    absent_teachers: +document.getElementById("p_absent_teachers").value || 0,
-    total_admin: +document.getElementById("p_total_admin").value || 0,
-    absent_admin: +document.getElementById("p_absent_admin").value || 0,
-    total_hifz: +document.getElementById("p_total_hifz").value || 0,
-    classes: +document.getElementById("p_classes").value || 0,
-    visit_classes: visit,
-    notes: document.getElementById("p_notes").value
-  };
-  
-  showLoading("جارٍ الحفظ...");
-  const res = await callAPI(null, true, payload);
-  hideLoading();
-  
-  if (res.status === "success" || res.status === "updated") {
-    showToast(isEditMode ? "✅ تم تحديث البيانات" : "✅ تم حفظ البيانات");
-    await loadPrincipalData();
-  } else {
-    alert("❌ فشل الحفظ - تحقق من الاتصال");
-  }
-}
-
-function showToast(msg, isWarning = false) {
-  const toast = document.getElementById("toast");
-  const toastMsg = document.getElementById("toastMsg");
-  toastMsg.textContent = msg;
-  toast.style.background = isWarning ? "var(--warning)" : "var(--success)";
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 3000);
-}
-
-// تحميل تلقائي للمستخدم المخزن
 window.addEventListener("DOMContentLoaded", () => {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date().toISOString().slice(0,10);
   document.getElementById("supDate").value = today;
   document.getElementById("priDate").value = today;
+  document.getElementById("bhDate").value = today;
+  document.getElementById("ghDate").value = today;
+  document.getElementById("dirDate").value = today;
 });
 </script>
 </body>
