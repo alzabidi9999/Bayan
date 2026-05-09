@@ -542,9 +542,32 @@ let editingMode={sup:false,pri:false};
 /* -------- أدوات -------- */
 function showLoading(m="جارٍ التحقق..."){document.getElementById("loadingMsg").textContent=m;document.getElementById("loadingOverlay").style.display="flex";}
 function hideLoading(){document.getElementById("loadingOverlay").style.display="none";}
-function postToSheets(p){return fetch(API_URL,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify(p)}).then(r=>r.json()).catch(()=>({status:"error"}));}
-function getFromSheets(params){const qs=Object.entries(params).map(([k,v])=>`${k}=${encodeURIComponent(v)}`).join("&");return fetch(API_URL+"?"+qs).then(r=>r.json()).catch(()=>null);}
+function getFromSheets(params) {
+  return new Promise((resolve) => {
+    const cbName = "cb_" + Date.now();
+    const qs = Object.entries(params).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join("&");
+    const script = document.createElement("script");
+    window[cbName] = (data) => {
+      delete window[cbName];
+      document.body.removeChild(script);
+      resolve(data);
+    };
+    script.onerror = () => { delete window[cbName]; document.body.removeChild(script); resolve(null); };
+    script.src = API_URL + "?" + qs + "&callback=" + cbName;
+    document.body.appendChild(script);
+    setTimeout(() => { if(window[cbName]){ delete window[cbName]; try{document.body.removeChild(script);}catch(e){} resolve(null); }}, 15000);
+  });
+}
 
+function postToSheets(p) {
+  return fetch(API_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {"Content-Type": "text/plain"},
+    body: JSON.stringify(p)
+  }).then(() => ({status:"success"})).catch(() => ({status:"error"}));
+}
+  
 function showToast(msg,type="success"){
   const t=document.getElementById("toast");
   const icon=document.getElementById("toastIcon");
